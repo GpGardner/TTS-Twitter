@@ -8,16 +8,28 @@
 <body>
 <div th:replace="/fragments/navbar :: navbar"></div>
     <div class="container">
+    
+ 		 
         <h2>Tweets</h2>
+        
+        <!-- If No Tweets in Feed -->  
         <div th:if="${#lists.isEmpty(tweetList)}">
         	<h2>No Tweets in your feed!</h2>
         </div>
+        <!--  -->
+        
+        <!-- <div class="list-group"> -->
         <div class="list-group" th:each="tweet:${tweetList}">
-            <h5>@<span th:text="${tweet.user.username}"></span> <small><span th:text="${#dates.format(tweet.createdAt, 'M/d/yy')}"></span></small></h5>
+        <div class="list-group-item">
+            <h5 >@<a th:text="${tweet.user.username}" th:href="@{/users/} + ${tweet.user.username}"></a> <small><span th:text="${#dates.format(tweet.createdAt, 'M/d/yy')}"></span></small></h5>
             <div class="row">
+            <div class="col col-sm-6">
             <p th:utext="${tweet.message}"></p>
             </div>
+            </div>
     	</div>
+    	</div>
+    	
     </div>
 </body>
 </html>
