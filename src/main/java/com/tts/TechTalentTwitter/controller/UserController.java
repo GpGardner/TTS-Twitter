@@ -1,6 +1,6 @@
 package com.tts.TechTalentTwitter.controller;
  
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
  
@@ -54,6 +54,7 @@ public class UserController {
         SetFollowingStatus(users, usersFollowing, model);
         model.addAttribute("users", users);
         SetTweetCounts(users, model);
+        
         return "users";
     }
     
