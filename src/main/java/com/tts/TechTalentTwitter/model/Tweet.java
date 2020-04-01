@@ -37,7 +37,6 @@ public class Tweet {
 
 		
 		@Id
-		//Probably needs to become IDENTITY instead of AUTO
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		@Column(name = "tweet_id")
 		private Long id;
