@@ -32,9 +32,6 @@ import org.hibernate.validator.constraints.Length;
 // @NoArgsConstructor
 @Entity
 public class Tweet {
-
-	
-
 		
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
